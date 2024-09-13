@@ -5,6 +5,12 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+
+
+
+
+
 (function() {
   "use strict";
 
@@ -44,6 +50,8 @@
   /**
    * Navbar links active state on scroll
    */
+
+
   let navbarlinks = select('#navbar .scrollto', true)
   const navbarlinksActive = () => {
     let position = window.scrollY + 200
@@ -129,12 +137,14 @@
   /**
    * Preloader
    */
-  let preloader = select('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove()
-    });
-  }
+    let preloader = document.querySelector('#preloader'); // Assuming you meant document.querySelector instead of select
+    if (preloader) {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                preloader.remove();
+            }, 0); // 3000 milliseconds = 3 seconds
+        });
+    }
 
   /**
    * Hero type effect
@@ -268,3 +278,4 @@
   new PureCounter();
 
 })()
+

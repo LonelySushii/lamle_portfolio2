@@ -13,7 +13,7 @@ body {
     font-family: "Open Sans", sans-serif;
     color: #272829;
     background-color: black;
-    cursor: url('img/cursor4.png'), auto;
+    cursor: url('assets/img/cursor4.png'), default !important;
 }
 
 a {
@@ -41,6 +41,14 @@ h6 {
     width: 100%;
     height: 900px;
     float: left;
+    
+}
+
+.model {
+    background-color: white;
+}
+
+#main {
     
 }
 /*--------------------------------------------------------------
@@ -87,22 +95,20 @@ h6 {
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: #fff;
+  background: black;
 }
 
-#preloader:before {
-  content: "";
-  position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  border: 6px solid #ffb4dd;
-  border-top-color: #fff;
-  border-bottom-color: #fff;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: animate-preloader 1s linear infinite;
+
+
+.preloadanim {
+    width: 50vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
 }
+
 
 @keyframes animate-preloader {
   0% {
@@ -308,14 +314,21 @@ h6 {
 }
 
 #vid {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    filter: brightness(50%);
+    position: fixed; /* Fix the video to the viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    filter: brightness(80%);
+    z-index: -1; /* Send the video behind the content */
 }
 
+.content {
+    position: relative;
+    z-index: 1; /* Ensure content stays above the video */
+    padding: 20px;
+}
 
 
 
@@ -328,7 +341,7 @@ h6 {
 
 #hero:before {
   content: "";
-  background: rgba(255, 255, 255, 0.8);
+  
   position: absolute;
   bottom: 0;
   top: 0;
@@ -644,8 +657,19 @@ section {
 --------------------------------------------------------------*/
 
 
+#parallaxportfolio {
+    background-color: black;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 50px;
+    
+    
+}
 .portfolio .portfolio-item {
   margin-bottom: 30px;
+  
 }
 
 .portfolio #portfolio-flters {
@@ -812,6 +836,7 @@ section {
 .portfolio-details {
     padding-top: 0px;
     
+    
 }
 
 .background-details {
@@ -911,7 +936,7 @@ section {
 
 iframe {
     width: 100%;
-    height: 1200px;
+    height: 800px;
 }
 
 

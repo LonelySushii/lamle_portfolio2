@@ -60,10 +60,10 @@
     </header><!-- End Header -->
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex flex-column justify-content-center">
-    <img src="assets/img/portfolio/title2.png" id="vid"/>
-        <!--<video playsinline autoplay muted loop id="vid">
-            <source src="assets/img/portfolio/test3.mp4" type="video/mp4">
-        </video>-->
+    <!--<img src="assets/img/portfolio/title2.png" id="vid"/>-->
+        <video playsinline autoplay muted loop id="vid">
+            <source src="assets/img/portfolio/test4.mp4" type="video/mp4">
+        </video>
         <div class="container" data-aos="zoom-in" data-aos-delay="100" id="container">
             <h1>Lam Le</h1>
             <p>I'm <span class="typed" data-typed-items="Multimedia Artist, Graphic Designer, 3D Artist, Game Designer, Animator"></span></p>
@@ -73,9 +73,19 @@
                 <a href="https://www.instagram.com/lonelysushi__/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
                 <!--<a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>-->
                 <a href="https://www.linkedin.com/in/lamle28/" target="_blank" " class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
+
             </div>
 
-           
+            <model-viewer src="assets/img/model/lamle.glb" class="model" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="0" shadow-softness="1" id="modelViewer">
+                <div class="progress-bar hide" slot="progress-bar">
+                    <div class="update-bar"></div>
+                </div>
+                <button slot="ar-button" id="ar-button">
+                    View in your space
+                </button>
+            </model-viewer>
+
 
 
         </div>
@@ -272,17 +282,7 @@
                     <img src="assets/img/portfolio/flower.png" class="flower" />
                     <h2>Showreels</h2>
                     <p></p>
-                    <model-viewer src="assets/img/model/sushi.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
-                        <div class="progress-bar hide" slot="progress-bar">
-                            <div class="update-bar"></div>
-                        </div>
-                        <button slot="ar-button" id="ar-button">
-                            View in your space
-                        </button>
-                        <div id="ar-prompt">
-                            <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-                        </div>
-                    </model-viewer>
+                   
                 </div>
 
                 <div class="row">
@@ -872,7 +872,7 @@
         </div>
     </footer><!-- End Footer -->
 
-    <div id="preloader"> <img src="assets/img/portfolio/loading3.gif" class="preloadanim"> </div>
+    <div id="preloader"> <img src="assets/img/portfolio/loading4.gif" class="preloadanim"> </div>
     <!--<div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>-->
     <!-- Vendor JS Files -->

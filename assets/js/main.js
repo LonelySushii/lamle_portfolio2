@@ -279,7 +279,12 @@
 
 })()
 
-const modelViewer = document.querySelector('#modelViewer');
+    const modelViewer = document.querySelector('#modelViewer');
+
+// Lock the zoom level
+modelViewer.addEventListener('load', () => {
+    modelViewer.cameraOrbit = '0deg 75deg 2.5m'; // Set the initial orbit
+});
 
 // Variables to store mouse position and movement
 let isMouseDown = false;
@@ -308,8 +313,11 @@ document.addEventListener('mousemove', (event) => {
     const newAzimuthalAngle = currentOrbit.azimuthal + deltaX * 0.01; // Adjust rotation speed here
     const newPolarAngle = currentOrbit.polar + deltaY * 0.01;
 
-    // Set the camera orbit with the new values
-    modelViewer.cameraOrbit = `${newAzimuthalAngle}rad ${newPolarAngle}rad ${currentOrbit.radius}m`;
+    // Ensure the camera orbit stays within desired limits (optional, to restrict vertical rotation)
+    const clampedPolarAngle = Math.max(Math.min(newPolarAngle, Math.PI / 2), 0); // Clamp between 0 and 90 degrees
+
+    // Set the camera orbit with the new azimuthal and clamped polar angle, keeping the zoom level locked
+    modelViewer.cameraOrbit = `${newAzimuthalAngle}rad ${clampedPolarAngle}rad ${currentOrbit.radius}`;
 
     lastMouseX = event.clientX;
     lastMouseY = event.clientY;

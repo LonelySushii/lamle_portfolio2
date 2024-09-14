@@ -45,7 +45,8 @@ h6 {
 }
 
 .model {
-    width: 200vh;
+    width: 100vh;
+    height: 100vh;
     background-color: none;
     position: absolute;
     top: 10%;

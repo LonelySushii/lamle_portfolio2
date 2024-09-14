@@ -45,7 +45,12 @@ h6 {
 }
 
 .model {
-    background-color: white;
+    width: 80vh;
+    background-color: lightblue;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -70%);
 }
 
 #main {
@@ -101,7 +106,7 @@ h6 {
 
 
 .preloadanim {
-    width: 50vh;
+    width: 20vh;
     position: absolute;
     top: 50%;
     left: 50%;

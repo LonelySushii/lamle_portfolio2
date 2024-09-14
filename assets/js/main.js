@@ -279,46 +279,59 @@
 
 })()
 
-    const modelViewer = document.querySelector('#modelViewer');
+  const modelViewer = document.querySelector('#modelViewer');
+    
+    // Lock the zoom level
+    modelViewer.addEventListener('load', () => {
+        modelViewer.cameraOrbit = '0deg 75deg 2.5m'; // Set the initial orbit
+    });
 
-// Lock the zoom level
-modelViewer.addEventListener('load', () => {
-    modelViewer.cameraOrbit = '0deg 75deg 2.5m'; // Set the initial orbit
-});
+    // Variables to store mouse position and movement
+    let isMouseDown = false;
+    let lastMouseX = 0;
+    let lastMouseY = 0;
 
-// Variables to store mouse position and movement
-let isMouseDown = false;
-let lastMouseX = 0;
-let lastMouseY = 0;
+    // Event listeners for mouse movement
+    document.addEventListener('mousedown', (event) => {
+        isMouseDown = true;
+        lastMouseX = event.clientX;
+        lastMouseY = event.clientY;
+    });
 
-// Event listeners for mouse movement
-document.addEventListener('mousedown', (event) => {
-    isMouseDown = true;
-    lastMouseX = event.clientX;
-    lastMouseY = event.clientY;
-});
+    document.addEventListener('mouseup', () => {
+        isMouseDown = false;
+    });
 
-document.addEventListener('mouseup', () => {
-    isMouseDown = false;
-});
+    document.addEventListener('mousemove', (event) => {
+        if (!isMouseDown) return;
 
-document.addEventListener('mousemove', (event) => {
-    if (!isMouseDown) return;
+        const deltaX = event.clientX - lastMouseX;
+        const deltaY = event.clientY - lastMouseY;
 
-    const deltaX = event.clientX - lastMouseX;
-    const deltaY = event.clientY - lastMouseY;
+        // Adjust the camera's orbit based on mouse movement
+        const currentOrbit = modelViewer.getCameraOrbit();
+        const newAzimuthalAngle = currentOrbit.azimuthal + deltaX * 0.01; // Adjust rotation speed here
+        const newPolarAngle = currentOrbit.polar + deltaY * 0.01;
 
-    // Adjust the camera's orbit based on mouse movement
-    const currentOrbit = modelViewer.getCameraOrbit();
-    const newAzimuthalAngle = currentOrbit.azimuthal + deltaX * 0.01; // Adjust rotation speed here
-    const newPolarAngle = currentOrbit.polar + deltaY * 0.01;
+        // Ensure the camera orbit stays within desired limits (optional, to restrict vertical rotation)
+        const clampedPolarAngle = Math.max(Math.min(newPolarAngle, Math.PI / 2), 0); // Clamp between 0 and 90 degrees
 
-    // Ensure the camera orbit stays within desired limits (optional, to restrict vertical rotation)
-    const clampedPolarAngle = Math.max(Math.min(newPolarAngle, Math.PI / 2), 0); // Clamp between 0 and 90 degrees
+        // Set the camera orbit with the new azimuthal and clamped polar angle, keeping the zoom level locked
+        modelViewer.cameraOrbit = `${newAzimuthalAngle}rad ${clampedPolarAngle}rad ${currentOrbit.radius}`;
 
-    // Set the camera orbit with the new azimuthal and clamped polar angle, keeping the zoom level locked
-    modelViewer.cameraOrbit = `${newAzimuthalAngle}rad ${clampedPolarAngle}rad ${currentOrbit.radius}`;
+        lastMouseX = event.clientX;
+        lastMouseY = event.clientY;
+    });
 
-    lastMouseX = event.clientX;
-    lastMouseY = event.clientY;
-});
+    // Handle scroll to rotate the model instead of zooming
+    document.addEventListener('wheel', (event) => {
+        event.preventDefault();  // Prevent zooming
+
+        const currentOrbit = modelViewer.getCameraOrbit();
+        
+        // Scroll direction (up/down) adjusts azimuthal angle for horizontal rotation
+        const newAzimuthalAngle = currentOrbit.azimuthal + event.deltaY * 0.005; // Adjust sensitivity here
+
+        // Set the new camera orbit with updated azimuthal angle
+        modelViewer.cameraOrbit = `${newAzimuthalAngle}rad ${currentOrbit.polar}rad ${currentOrbit.radius}`;
+    }, { passive: false });  // passive: false allows us to call preventDefault()

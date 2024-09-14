@@ -279,3 +279,38 @@
 
 })()
 
+const modelViewer = document.querySelector('#modelViewer');
+
+// Variables to store mouse position and movement
+let isMouseDown = false;
+let lastMouseX = 0;
+let lastMouseY = 0;
+
+// Event listeners for mouse movement
+document.addEventListener('mousedown', (event) => {
+    isMouseDown = true;
+    lastMouseX = event.clientX;
+    lastMouseY = event.clientY;
+});
+
+document.addEventListener('mouseup', () => {
+    isMouseDown = false;
+});
+
+document.addEventListener('mousemove', (event) => {
+    if (!isMouseDown) return;
+
+    const deltaX = event.clientX - lastMouseX;
+    const deltaY = event.clientY - lastMouseY;
+
+    // Adjust the camera's orbit based on mouse movement
+    const currentOrbit = modelViewer.getCameraOrbit();
+    const newAzimuthalAngle = currentOrbit.azimuthal + deltaX * 0.01; // Adjust rotation speed here
+    const newPolarAngle = currentOrbit.polar + deltaY * 0.01;
+
+    // Set the camera orbit with the new values
+    modelViewer.cameraOrbit = `${newAzimuthalAngle}rad ${newPolarAngle}rad ${currentOrbit.radius}m`;
+
+    lastMouseX = event.clientX;
+    lastMouseY = event.clientY;
+});

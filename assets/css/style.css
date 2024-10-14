@@ -187,7 +187,7 @@ p {
 
 .hidden {
   opacity: 0;
-  transform:
+  
 }
 
 .button {
@@ -410,7 +410,7 @@ p {
 }
 
 .nav-menu * {
-  margin: 0;" 
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -909,6 +909,7 @@ section {
     padding-bottom: 40px;
     border-radius: 50px;
   border: solid #634b58 3px;
+  overflow:visible;
 }
 
 @media (max-width: 1900px) {
@@ -930,6 +931,7 @@ section {
 #showreel {
     padding-left: 1vh;
     padding-right: 1vh;
+    
 }
 
 .portfolio .portfolio-item {

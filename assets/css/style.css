@@ -10,12 +10,16 @@
 # General
 --------------------------------------------------------------*/
 body {
-    font-family: "Open Sans", sans-serif;
-    color: #272829;
+    font-family: "poppins";
+    color: #ffffff;
     background-color: black;
     cursor: url('assets/img/cursor4.png'), default !important;
 }
 
+li {
+  text-align: center;
+  color: white;
+}
 a {
   color: #ffb4dd;
   text-decoration: none;
@@ -30,11 +34,71 @@ h1,
 h2,
 h3 {
     font-family: "Pacifico", sans-serif;
+    color: #ffffff;
+    font-size: 70%;
+    margin-left: auto;
+  margin-right: auto;
 }
-h4,
-h5,
-h6 {
+
+h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+    color: #ffffff;
+    font-size: 70%;
+    margin-left: auto;
+  margin-right: auto;
+}
+
+h5 {
   font-family: "Pacifico", sans-serif;
+  color: #ffffff;
+  font-size: 40px;
+  top: 17%;
+  position: relative;
+  
+}
+
+h6 {
+  font-family: "Poppins";
+  color: #FFFFFF;
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+h7 {
+  font-family: "Pacifico", sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+  position: relative;
+  color: #ffffff;
+}
+
+h8 {
+  font-family: "Pacifico", sans-serif;
+  font-size: 28px;
+  font-weight: 100;
+  /* text-transform: uppercase; */
+  position: relative;
+  color: #181818;
+}
+
+h9 {
+  font-family: "Poppins";
+  color: #FFFFFF;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+p {
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 #pdf {
@@ -45,12 +109,181 @@ h6 {
 }
 
 .model {
-    background-color: white;
+  width: 90%; /* Use percentage to scale based on screen width */
+  max-width: 900px; /* Optional: set a maximum width for larger screens */
+  position: fixed;
+  top: -150%;
+  left: 15%; 
 }
 
-#main {
-    
+
+
+@media (max-width: 1900px) {
+  .model {
+      width: 50%; /* Scale down for tablet screens */
+      left: 23%;  /* Adjust positioning for smaller screens */
+      top: -70%;
+  }
 }
+
+
+
+@media (max-width: 1500px) {
+  .model {
+      width: 50%; /* Scale down for tablet screens */
+      left: 25%;  /* Adjust positioning for smaller screens */
+      top: -60%;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .model {
+      width: 70%; /* Scale down for tablet screens */
+      left: 15%;  /* Adjust positioning for smaller screens */
+      top: -50%;
+  }
+}
+
+@media (max-width: 900px) {
+  .model {
+      width: 70%; /* Scale down for tablet screens */
+      left: 15%;  /* Adjust positioning for smaller screens */
+      top: -15%;
+  }
+}
+
+@media (max-width: 768px) {
+  .model {
+      width: 70%; /* Scale down for tablet screens */
+      left: 15%;  /* Adjust positioning for smaller screens */
+      top: 10%;
+  }
+}
+
+@media (max-width: 576px) {
+  .model .lamle {
+      width: 60%; /* Further scale down for mobile screens */
+      left: 20%;  /* Center or adjust the position */
+      top: 50%;
+  }
+}
+
+
+.lamle {
+  position: relative;
+  top: 130%;
+}
+
+.content {
+ 
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.spacer {
+  height: 200vh; /* Add extra space to allow for scrolling */
+ 
+}
+
+.hidden {
+  opacity: 0;
+  transform:
+}
+
+.button {
+  width: 200px;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ef6db4;
+  border: 0;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+  display: block;
+  font-size: 28px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+#button2 {
+  width: 300px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: -10px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.wrap {
+  cursor: pointer;
+  font-size: 5vh;
+  width: 1300px;
+  height:600px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+  margin-top: 500px;
+  
+}
+
+/* Text */
+.pinktext {
+  color: #ffb4dd;
+}
+
+#text {
+  text-align: right;
+  color: white;
+  
+}
+
+#text2 {
+  color: white;
+ text-align: justify;
+ margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  #text {
+      font-size: 70%;
+  }
+
+  #text2{
+    font-size: 70%;
+    padding-top: 0px;
+  }
+
+  #titletext {
+    width: 70%;
+  }
+
+}
+
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -101,7 +334,7 @@ h6 {
 
 
 .preloadanim {
-    width: 50vh;
+    width: 20vh;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -147,8 +380,8 @@ h6 {
 @media (max-width: 991px) {
   #header {
     width: 300px;
-    background: #fff;
-    border-right: 1px solid #e6e9ec;
+    background: rgb(17,12,36, 0.95);
+    margin-left: -30px;
     left: -300px;
   }
 }
@@ -165,13 +398,19 @@ h6 {
 /**
 * Desktop Navigation 
 */
+
+/* Ensure all three buttons show text without hovering */
+/* Ensure Works and About buttons always show text */
+#home span {
+  display: inline !important; /* Make text always visible */
+}
 .nav-menu {
   padding: 0;
   display: block;
 }
 
 .nav-menu * {
-  margin: 0;
+  margin: 0;" 
   padding: 0;
   list-style: none;
 }
@@ -208,48 +447,46 @@ h6 {
   padding: 0 5px 0 7px;
   color: #45505b;
 }
-
+/* Media query for other buttons to hide text until hovered */
 @media (min-width: 992px) {
-
-  .nav-menu a,
-  .nav-menu a:focus {
-    width: 56px;
+  .nav-menu a:not(#home),
+  .nav-menu a:focus:not(#home) {
+    width: 56px; /* Keep buttons compact when not active */
   }
 
-  .nav-menu a span,
-  .nav-menu a:focus span {
-    display: none;
-    color: #fff;
+  .nav-menu a:not(#home) span,
+  .nav-menu a:focus:not(#home) span {
+    display: none; /* Hide text by default on other buttons */
   }
 }
 
-.nav-menu a:hover,
-.nav-menu .active,
-.nav-menu .active:focus,
-.nav-menu li:hover>a {
+/* Apply full hover effect for Works and About buttons */
+.nav-menu li:not(#home):hover > a,
+.nav-menu li:not(#home) .active,
+.nav-menu li:not(#home) .active:focus {
+  width: 100%; /* Expand width on hover */
   color: #fff;
   background: #ffb4dd;
+  transition: 0.3s;
 }
 
-.nav-menu a:hover span,
-.nav-menu .active span,
-.nav-menu .active:focus span,
-.nav-menu li:hover>a span {
+/* Show text on hover for Works and About */
+.nav-menu li:not(#home):hover > a span,
+.nav-menu li:not(#home) .active span,
+.nav-menu li:not(#home) .active:focus span {
+  display: block;
   color: #fff;
 }
 
-.nav-menu a:hover,
-.nav-menu li:hover > a {
-    width: 100%;
-    color: #fff;
-    
+/* Maintain color, background, and transition for all buttons */
+.nav-menu a,
+.nav-menu a:focus {
+  color: #45505b;
+  background: #f2f3f5;
+  transition: 0.3s;
 }
 
-    .nav-menu a:hover span,
-    .nav-menu li:hover > a span {
-        display: block;
-        
-    }
+/* Flower */
 
 .flower {
     height: 30px;          
@@ -320,8 +557,13 @@ h6 {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    filter: brightness(80%);
+    filter: brightness(90%);
     z-index: -1; /* Send the video behind the content */
+}
+
+.coffinvid {
+  width: 100%;
+  height: 50%;
 }
 
 .content {
@@ -334,7 +576,7 @@ h6 {
 
 @media (min-width: 992px) {
   #hero {
-    padding-left: 60px;
+    padding-left: 0px;
     
   }
 }
@@ -485,6 +727,8 @@ section {
 
 .about p {
     color: white;
+    font-size: 18px;
+    text-align: justify;
 }
 
 .about .content ul {
@@ -556,7 +800,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
@@ -658,18 +902,39 @@ section {
 
 
 #parallaxportfolio {
-    background-color: black;
-    padding-left: 50px;
-    padding-right: 50px;
+    background-color:rgb(17,12,36, 0.95);
+    padding-left: 2vh;
+    padding-right:2vh;
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 40px;
     border-radius: 50px;
-    
-    
+  border: solid #634b58 3px;
 }
+
+@media (max-width: 1900px) {
+  #parallaxportfolio {
+      width: 70%; /* Scale down for tablet screens */
+      left: 23%;  /* Adjust positioning for smaller screens */
+      top: -30%;
+  }
+}
+
+@media (max-width: 700px) {
+  #parallaxportfolio {
+      width: 100%; /* Scale down for tablet screens */
+      left: 23%;  /* Adjust positioning for smaller screens */
+      
+  }
+}
+
+#showreel {
+    padding-left: 1vh;
+    padding-right: 1vh;
+}
+
 .portfolio .portfolio-item {
   margin-bottom: 30px;
-  
+ 
 }
 
 .portfolio #portfolio-flters {
@@ -677,13 +942,14 @@ section {
   margin: 0 auto 25px auto;
   list-style: none;
   text-align: center;
-  background: black;
+  background: rgb(255, 255, 255, 0);
   border-radius: 50px;
   padding: 2px 15px;
+  cursor: pointer;
 }
 
 .portfolio #portfolio-flters li {
-  cursor: pointer;
+  
   display: inline-block;
   padding: 10px 15px;
   font-size: 16px;
@@ -709,15 +975,17 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  background: rgba(69, 80, 91, 0.8);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 15px;
-  border: solid white 3px;
+  border: solid #634b58 3px;
+  
+  opacity: 1;
 
 }
 
 .portfolio .portfolio-wrap::before {
   content: "";
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(2, 2, 2, 0.5);
   position: absolute;
   left: 30px;
   right: 30px;
@@ -726,6 +994,8 @@ section {
   transition: all ease-in-out 0.3s;
   z-index: 2;
   opacity: 0;
+  border: solid #ffffff 3px;
+  border-radius: 10px;
 }
 
 .portfolio .portfolio-wrap .portfolio-info {
@@ -765,15 +1035,14 @@ section {
   position: absolute;
   bottom: 35px;
   right: 35px;
-  
+ 
   transition: all 0.5s ease 0s;
   z-index: 9994;
 }
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
   font-size: 20px;
-  color: #45505b;
-  font-weight: 600;
+ 
 }
 
 .portfolio .portfolio-wrap .portfolio-info p {
@@ -824,8 +1093,10 @@ section {
 }
 
 .portfolio-info  {
-    color: black;
+    color: rgb(31, 31, 31);
 }
+
+
 
 /*--------------------------------------------------------------
 # Portfolio Details
@@ -840,7 +1111,7 @@ section {
 }
 
 .background-details {
-    background-color: white;
+    background-color: rgb(0, 0, 0);
 }
 
 .portfolio-details .portfolio-details-slider img {
@@ -937,6 +1208,9 @@ section {
 iframe {
     width: 100%;
     height: 800px;
+    
+  cursor: pointer;
+    
 }
 
 
@@ -986,7 +1260,7 @@ iframe {
 }
 
 .services .icon-box h4 a {
-  color: #45505b;
+
   transition: ease-in-out 0.3s;
 }
 
@@ -1105,7 +1379,7 @@ testimonial-item {
 .testimonials .testimonial-item h3 {
   font-size: 20px;
   font-weight: bold;
-  font-family: "Open Sans", sans-serif;
+  font-family: "poppins", sans-serif;
   margin: 10px 0 5px 0;
   color: #ffb4dd;
 
@@ -1114,7 +1388,7 @@ testimonial-item {
 
     .testimonials .testimonial-item h4 {
         font-size: 14px;
-        font-family: "Open Sans", sans-serif;
+        font-family: "poppins", sans-serif;
         color: #ddd;
         margin: 0 0 15px 0;
     }
@@ -1169,9 +1443,14 @@ testimonial-item {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+.contact {
+  background-color: rgb(17,12,36, 0.95);
+  
+}
+
 .contact .info {
   width: 100%;
-  background: black;
+  
 }
 
 .contact .info i {
@@ -1194,13 +1473,15 @@ testimonial-item {
   font-weight: 600;
   margin-bottom: 5px;
   color: #ffb4dd;
+  text-align: left;
 }
 
 .contact .info p {
   padding: 0 0 0 60px;
   margin-bottom: 0;
   font-size: 14px;
-  color: #fff;
+  color: #ffffff;
+  text-align: left;
 }
 
 .contact .info .email,
@@ -1217,7 +1498,7 @@ testimonial-item {
 
 .contact .php-email-form {
   width: 100%;
-  background: black;
+  
 }
 
 .contact .php-email-form .form-group {
@@ -1304,8 +1585,18 @@ testimonial-item {
   }
 }
 
-#3D {
-    width: 10%;
+.form {
+  background: #ef6db4;
+  border: 0;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+  margin-top: 10px;
+}
+
+.form:hover {
+  background: #61d3ff;
 }
 
 /*--------------------------------------------------------------
@@ -1371,3 +1662,114 @@ testimonial-item {
 #round {
     width: 100%;
 }
+
+/* Font */
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+

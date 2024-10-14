@@ -10,10 +10,11 @@
 
 
 
-
 (function() {
   "use strict";
 
+   
+ 
   /**
    * Easy selector helper function
    */
@@ -96,6 +97,7 @@
     onscroll(document, toggleBacktotop)
   }
 
+  
   /**
    * Mobile nav toggle
    */
@@ -267,8 +269,7 @@
     AOS.init({
       duration: 1000,
       easing: 'ease-in-out',
-      once: true,
-      mirror: false
+      
     })
   });
 
@@ -279,3 +280,57 @@
 
 })()
 
+    const modelViewer = document.querySelector('#modelViewer');
+
+// Lock the zoom level
+modelViewer.addEventListener('load', () => {
+    modelViewer.cameraOrbit = '0deg 75deg 2.5m'; // Set the initial orbit
+});
+
+// Variables to store mouse position and movement
+let isMouseDown = false;
+let lastMouseX = 0;
+let lastMouseY = 0;
+
+// Event listeners for mouse movement
+document.addEventListener('mousedown', (event) => {
+    isMouseDown = true;
+    lastMouseX = event.clientX;
+    lastMouseY = event.clientY;
+});
+
+document.addEventListener('mouseup', () => {
+    isMouseDown = false;
+});
+
+document.addEventListener('mousemove', (event) => {
+    if (!isMouseDown) return;
+
+    const deltaX = event.clientX - lastMouseX;
+    const deltaY = event.clientY - lastMouseY;
+
+    // Adjust the camera's orbit based on mouse movement
+    const currentOrbit = modelViewer.getCameraOrbit();
+    const newAzimuthalAngle = currentOrbit.azimuthal + deltaX * 0.01; // Adjust rotation speed here
+    const newPolarAngle = currentOrbit.polar + deltaY * 0.01;
+
+    // Ensure the camera orbit stays within desired limits (optional, to restrict vertical rotation)
+    const clampedPolarAngle = Math.max(Math.min(newPolarAngle, Math.PI / 2), 0); // Clamp between 0 and 90 degrees
+
+    // Set the camera orbit with the new azimuthal and clamped polar angle, keeping the zoom level locked
+    modelViewer.cameraOrbit = `${newAzimuthalAngle}rad ${clampedPolarAngle}rad ${currentOrbit.radius}`;
+
+    lastMouseX = event.clientX;
+    lastMouseY = event.clientY;
+});
+
+window.addEventListener(
+  "scroll",
+  () => {
+    document.body.style.setProperty(
+      "--scroll",
+      window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
+    );
+  },
+  false
+);

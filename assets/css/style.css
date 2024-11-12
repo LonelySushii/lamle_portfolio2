@@ -155,15 +155,18 @@ p {
 
 @media (max-width: 768px) {
   .model {
-      width: 100%; /* Scale down for tablet screens */
-      left: 0%;  /* Adjust positioning for smaller screens */
-      top: -80%;
+      width: 90%; /* Scale down for tablet screens */
+      left: 5%;  /* Adjust positioning for smaller screens */
+      top: -30%;
   }
 
   .showreelvid {
    max-height: 30vh;
   }
 
+  .lamle {
+    top: -200%;
+  }
   
 }
 

@@ -62,8 +62,8 @@ h5 {
 h6 {
   font-family: "Poppins";
   color: #FFFFFF;
-    font-size: 18px;
-    margin-top: 0px;
+    font-size: 28px;
+    margin-top: 10px;
     margin-bottom: 25px;
     text-align: center;
 }
@@ -90,7 +90,7 @@ h9 {
   font-family: "Poppins";
   color: #FFFFFF;
     font-size: 18px;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 25px;
     text-align: center;
 }
@@ -231,7 +231,7 @@ p {
   content: '\00bb';
   position: absolute;
   opacity: 0;
-  top: -10px;
+  top: 2px;
   right: -20px;
   transition: 0.5s;
 }
